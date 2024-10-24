@@ -1,0 +1,179 @@
+/*
+mysampleproject_pc.css
+Copyright (C) 2024 XXXXXX Corporation. All Rights Reserved.
+*/
+.SampleImages__list {
+  *zoom: 1;
+}
+
+.SampleImages__list:after {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  height: 0;
+  content: ".";
+}
+
+.Appinfo {
+  margin: 40px 0;
+}
+
+.Appinfo__inner {
+  width: 950px;
+  margin: 0 auto;
+}
+
+.Appinfo__header {
+  margin-bottom: 16px;
+}
+
+.Appinfo__title {
+  text-align: center;
+  font-size: 26px;
+  background-image: url(https://s.yimg.jp/images/auct/cms/common/pc/img/1.0.0/spr_common_04.png);
+  background-position: 0px 0px;
+  width: 573px;
+  height: 54px;
+  margin: 0 auto;
+  text-indent: -9999px;
+}
+
+.Appinfo__body {
+  margin-bottom: 14px;
+}
+
+.Appinfo__item {
+  padding: 28px 25px 28px 83px;
+}
+
+.Appinfo__item + .Appinfo__item {
+  border-top: 1px solid #dddbd4;
+}
+
+.Appinfo__deviceHeader {
+  float: left;
+  width: 293px;
+}
+
+.Appinfo__deviceTitle {
+  display: block;
+  text-indent: -9999px;
+}
+
+.Appinfo__deviceTitle--smartphone {
+  background-image: url(https://s.yimg.jp/images/auct/cms/common/pc/img/1.0.0/spr_common_04.png);
+  background-position: -870px -64px;
+  width: 224px;
+  height: 80px;
+}
+
+.Appinfo__deviceBody {
+  overflow: hidden;
+}
+
+.Appinfo__deviceItem {
+  width: 49.99%;
+  float: left;
+}
+
+.Appinfo__link {
+  display: block;
+  text-indent: -9999px;
+}
+
+.Appinfo__link--smartphoneiOS {
+  background-image: url(https://s.yimg.jp/images/auct/cms/common/pc/img/1.0.0/spr_common_04.png);
+  background-position: 0px -273px;
+  width: 214px;
+  height: 84px;
+}
+
+.Appinfo__link--smartphoneAndroid {
+  background-image: url(https://s.yimg.jp/images/auct/cms/common/pc/img/1.0.0/spr_common_04.png);
+  background-position: -448px -273px;
+  width: 214px;
+  height: 83px;
+}
+
+.Appinfo__link:hover {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.Appinfo__note {
+  font-size: 75%;
+  text-align: right;
+}
+
+.SampleKeyVisual {
+  background: url(../img/bg_sample_kv_01.png) no-repeat 0 0;
+  -moz-background-size: 100% auto;
+       background-size: 100% auto;
+}
+
+.SampleKeyVisual__title {
+  display: block;
+  text-indent: -9999px;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 950px;
+  height: 0;
+  padding-top: 21.05263%;
+  margin-bottom: 10px;
+}
+
+.SampleKeyVisual__link {
+  text-align: center;
+}
+
+.SampleImages__list {
+  text-align: center;
+}
+
+.SampleImages__item {
+  display: inline-block;
+  margin: 10px;
+  text-indent: -9999px;
+}
+
+.SampleImages__item--sample01 {
+  background-image: url(../img/spr_common_01.png);
+  background-position: 0px 0px;
+  width: 200px;
+  height: 200px;
+}
+
+.SampleImages__item--sample02 {
+  background-image: url(../img/spr_common_01.png);
+  background-position: -210px 0px;
+  width: 200px;
+  height: 200px;
+}
+
+.SampleImages__item--sample03 {
+  background-image: url(../img/spr_common_01.png);
+  background-position: 0px -210px;
+  width: 200px;
+  height: 200px;
+}
+
+.SampleImages__item--sample04 {
+  background-image: url(../img/spr_common_01.png);
+  background-position: -210px -210px;
+  width: 200px;
+  height: 200px;
+}
+
+.Knowledge__item--safesupport .Knowledge__link {
+  background-image: url(https://s.yimg.jp/images/auct/cms/common/pc/img/1.0.0/spr_common_04.png);
+  background-position: 0px -64px;
+  width: 164px;
+  height: 164px;
+}
+
+.Knowledge__item--about .Knowledge__link {
+  background-image: url(https://s.yimg.jp/images/auct/cms/common/pc/img/1.0.0/spr_common_04.png);
+  background-position: -174px -64px;
+  width: 164px;
+  height: 164px;
+}

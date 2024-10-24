@@ -1,0 +1,210 @@
+//- MT環境用と通常のローカル確認環境用とにソースを出し分けたい場合、
+//- 以下のようにif文で記述します。（productionという変数はgulpfile.js内で定義してあり、
+//- 両方のソースを出し分けてビルドする設定がしてあります）
+if production == true
+    //- 本番MT用(PHP等のソースが入ったもの)
+    | 
+    |<mt:SetVar name="closeNoticeFrom" value="2016/09/07 17:21:05" format="%Y/%m/%d %H:%M:%S"　 trim="1" />
+    |<MTInclude blog_id="444" module="共通ページヘッダー（2016/09版）"><!-- ★★★通常のヘッダー★★★ -->
+    |<MTIgnore>
+    |<!--MTInclude blog_id="444" module="共通ページヘッダー（2016/09版）" type="guide"--><!-- ★★★ガイドのヘッダー★★★ -->
+    |<!--MTInclude blog_id="444" module="共通ページヘッダー（2016/09版）" type="external"--><!-- ★★★外部ヘッダー★★★ -->
+    |<!--MTInclude blog_id="444" module="共通ページヘッダー（2016/09版）" hasLogin="true" hasSns="true" hasYjLink="true" hasPeriod="true" hasOthers="true"--><!-- ★★★全オプション★★★ -->
+    |</MTIgnore>
+else
+
+    //- 表示確認テンプレート用
+    // .l-header
+    .l-header
+        .l-inner
+            include _script
+            include _emg
+            include _noscriptnotice
+            include _closenotice
+
+            //- ガイド用ヘッダー（利用時はコメントアウトを外す）
+                // #header
+                .Header.Header--guide#header
+                    .Header__inner
+
+                            // ブランドロゴ
+                            p.Header__logo
+                                a.Header__logoLink(href="https://auctions.yahoo.co.jp/") ヤフオク!
+
+                            // ログインテキスト
+                            |<!--
+                            p.Header__login
+                                strong
+                                    a.Header__loginLink(href="#") ログイン
+                                    br
+                                    |IDでもっと便利に [ 
+                                    a.Header__loginLink(href="#") 新規取得
+                                     | ]
+                            |-->
+
+                            p.Header__login
+                                |ようこそ、
+                                strong **************
+                                |さん
+                                br
+                                | [
+                                a.Header__loginLink(href="#") ログアウト
+                                 | ]
+
+
+                            // 関連情報
+                            .Header__relevant
+
+                                <!--[if (gte IE 9)|!(IE)]><!-->
+                                // SNS
+                                ul.Header__sns
+                                    li.Header__snsItem.Header__snsItem--facebook.
+                                        <div class="fb-share-button fb_iframe_widget" data-href="" data-type="button" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;href=http%3A%2F%2Fcar.auctions.yahoo.co.jp%2Fcar_promo%2Flion_nw%2F201506%2F%23domestic_u30&amp;locale=ja_JP&amp;sdk=joey&amp;type=button"><span style="vertical-align: bottom; width: 60px; height: 20px;"><iframe name="f1cda3bd6a72698" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:share_button Facebook Social Plugin" src="http://www.facebook.com/v2.0/plugins/share_button.php?app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df277938d57858f%26domain%3Dcar.auctions.yahoo.co.jp%26origin%3Dhttp%253A%252F%252Fcar.auctions.yahoo.co.jp%252Ff2382ea8cf85584%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fcar.auctions.yahoo.co.jp%2Fcar_promo%2Flion_nw%2F201506%2F%23domestic_u30&amp;locale=ja_JP&amp;sdk=joey&amp;type=button" style="border: none; visibility: visible; width: 60px; height: 20px;" class=""></iframe></span></div>
+                                    li.Header__snsItem.Header__snsItem--twitter.
+                                        <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="http://platform.twitter.com/widgets/tweet_button.781f4f0ed6951ea86890554cec78adec.ja.html#_=1461314825355&amp;count=horizontal&amp;dnt=false&amp;id=twitter-widget-0&amp;lang=ja&amp;original_referer=http%3A%2F%2Fcar.auctions.yahoo.co.jp%2Fcar_promo%2Flion_nw%2F201506%2F%23domestic_u30&amp;size=m&amp;text=%E3%83%A4%E3%83%95%E3%82%AA%E3%82%AF!%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B7%E3%83%A3%E3%83%AB%E3%82%B9%E3%83%88%E3%82%A2%E3%81%A7%E5%AE%89%E5%BF%83%E3%81%A7%E3%81%8A%E5%BE%97%E3%81%AA%E8%BB%8A%E6%8E%A2%E3%81%97%20-%20%E3%83%A9%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AA%E3%82%89%E4%BA%BA%E6%B0%97%E8%BB%8A%E7%A8%AE%E3%81%8C50%E4%B8%87%E5%86%86%E3%82%82%E3%81%8A%E5%BE%97%EF%BC%81&amp;type=share&amp;url=http%3A%2F%2Fcar.auctions.yahoo.co.jp%2Fcar_promo%2Flion_nw%2F201506%2F%23domestic_u30" style="position: static; visibility: visible; width: 75px; height: 20px;"></iframe>
+                                <!--<![endif]-->
+
+                            // リンク
+                            ul.Header__others
+                                li.Header__othersItem
+                                    a.Header__othersLink(href="https://www.yahoo.co.jp/") Yahoo! JAPAN
+                                    | &nbsp;-&nbsp;
+                                li.Header__othersItem.Header__othersItem--beginner
+                                    a.Header__othersLink(href="https://auctions.yahoo.co.jp/guide/guide/index.html") 初めての方へ
+                                    | &nbsp;-&nbsp;
+                                li.Header__othersItem
+                                    a.Header__othersLink(href="https://www.yahoo-help.jp/app/home/p/353/") ヘルプ
+
+                // /#header
+
+
+            //- 外部用ヘッダー（利用時はコメントアウトを外す）
+                // #header
+                .Header.Header--external#header
+                    .Header__inner
+
+                            // ブランドロゴ
+                            p.Header__logo
+                                a.Header__logoLink(href="https://auctions.yahoo.co.jp/") ヤフオク!
+
+                            // ログインテキスト
+                            |<!--
+                            p.Header__login
+                                strong
+                                    a.Header__loginLink(href="#") ログイン
+                                    br
+                                    |IDでもっと便利に [ 
+                                    a.Header__loginLink(href="#") 新規取得
+                                     | ]
+                            |-->
+
+                            p.Header__login
+                                |ようこそ、
+                                strong **************
+                                |さん
+                                br
+                                | [
+                                a.Header__loginLink(href="#") ログアウト
+                                 | ]
+
+                            // 当選履歴
+                            |<!--
+                            p.Header__history
+                                a.Header__historyLink(href="#") 当選履歴をみる
+                            |-->
+
+                            // 関連情報
+                            .Header__relevant
+
+                                <!--[if (gte IE 9)|!(IE)]><!-->
+                                // SNS
+                                ul.Header__sns
+                                    li.Header__snsItem.Header__snsItem--facebook.
+                                        <div class="fb-share-button fb_iframe_widget" data-href="" data-type="button" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;href=http%3A%2F%2Fcar.auctions.yahoo.co.jp%2Fcar_promo%2Flion_nw%2F201506%2F%23domestic_u30&amp;locale=ja_JP&amp;sdk=joey&amp;type=button"><span style="vertical-align: bottom; width: 60px; height: 20px;"><iframe name="f1cda3bd6a72698" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:share_button Facebook Social Plugin" src="http://www.facebook.com/v2.0/plugins/share_button.php?app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df277938d57858f%26domain%3Dcar.auctions.yahoo.co.jp%26origin%3Dhttp%253A%252F%252Fcar.auctions.yahoo.co.jp%252Ff2382ea8cf85584%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fcar.auctions.yahoo.co.jp%2Fcar_promo%2Flion_nw%2F201506%2F%23domestic_u30&amp;locale=ja_JP&amp;sdk=joey&amp;type=button" style="border: none; visibility: visible; width: 60px; height: 20px;" class=""></iframe></span></div>
+                                    li.Header__snsItem.Header__snsItem--twitter.
+                                        <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="http://platform.twitter.com/widgets/tweet_button.781f4f0ed6951ea86890554cec78adec.ja.html#_=1461314825355&amp;count=horizontal&amp;dnt=false&amp;id=twitter-widget-0&amp;lang=ja&amp;original_referer=http%3A%2F%2Fcar.auctions.yahoo.co.jp%2Fcar_promo%2Flion_nw%2F201506%2F%23domestic_u30&amp;size=m&amp;text=%E3%83%A4%E3%83%95%E3%82%AA%E3%82%AF!%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B7%E3%83%A3%E3%83%AB%E3%82%B9%E3%83%88%E3%82%A2%E3%81%A7%E5%AE%89%E5%BF%83%E3%81%A7%E3%81%8A%E5%BE%97%E3%81%AA%E8%BB%8A%E6%8E%A2%E3%81%97%20-%20%E3%83%A9%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AA%E3%82%89%E4%BA%BA%E6%B0%97%E8%BB%8A%E7%A8%AE%E3%81%8C50%E4%B8%87%E5%86%86%E3%82%82%E3%81%8A%E5%BE%97%EF%BC%81&amp;type=share&amp;url=http%3A%2F%2Fcar.auctions.yahoo.co.jp%2Fcar_promo%2Flion_nw%2F201506%2F%23domestic_u30" style="position: static; visibility: visible; width: 75px; height: 20px;"></iframe>
+                                <!--<![endif]-->
+
+                            // コブランドロゴ
+                            p.Header__cobrandLogo
+                                a.Header__cobrandLogoLink(href="#") 協力
+
+                // /#header
+
+            //- 通常ヘッダー
+            // #header
+            .Header#header
+                .Header__inner
+
+                        // ブランドロゴ
+                        p.Header__logo
+                            a.Header__logoLink(href="https://auctions.yahoo.co.jp/") ヤフオク!
+
+                        // ログインテキスト
+                        |<!--
+                        p.Header__login
+                            strong
+                                a.Header__loginLink(href="#") ログイン
+                                br
+                                |IDでもっと便利に [ 
+                                a.Header__loginLink(href="#") 新規取得
+                                 | ]
+                        |-->
+
+                        p.Header__login
+                            |ようこそ、
+                            strong **************
+                            |さん
+                            br
+                            | [
+                            a.Header__loginLink(href="#") ログアウト
+                             | ]
+
+                        // 当選履歴
+                        |<!--
+                        p.Header__history
+                            a.Header__historyLink(href="#") 当選履歴をみる
+                        |-->
+
+                        // 関連情報
+                        .Header__relevant
+
+                            <!--[if (gte IE 9)|!(IE)]><!-->
+                            // SNS
+                            ul.Header__sns
+                                li.Header__snsItem.Header__snsItem--facebook.
+                                    <div class="fb-share-button fb_iframe_widget" data-href="" data-type="button" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;href=http%3A%2F%2Fcar.auctions.yahoo.co.jp%2Fcar_promo%2Flion_nw%2F201506%2F%23domestic_u30&amp;locale=ja_JP&amp;sdk=joey&amp;type=button"><span style="vertical-align: bottom; width: 60px; height: 20px;"><iframe name="f1cda3bd6a72698" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:share_button Facebook Social Plugin" src="http://www.facebook.com/v2.0/plugins/share_button.php?app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df277938d57858f%26domain%3Dcar.auctions.yahoo.co.jp%26origin%3Dhttp%253A%252F%252Fcar.auctions.yahoo.co.jp%252Ff2382ea8cf85584%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fcar.auctions.yahoo.co.jp%2Fcar_promo%2Flion_nw%2F201506%2F%23domestic_u30&amp;locale=ja_JP&amp;sdk=joey&amp;type=button" style="border: none; visibility: visible; width: 60px; height: 20px;" class=""></iframe></span></div>
+                                li.Header__snsItem.Header__snsItem--twitter.
+                                    <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="http://platform.twitter.com/widgets/tweet_button.781f4f0ed6951ea86890554cec78adec.ja.html#_=1461314825355&amp;count=horizontal&amp;dnt=false&amp;id=twitter-widget-0&amp;lang=ja&amp;original_referer=http%3A%2F%2Fcar.auctions.yahoo.co.jp%2Fcar_promo%2Flion_nw%2F201506%2F%23domestic_u30&amp;size=m&amp;text=%E3%83%A4%E3%83%95%E3%82%AA%E3%82%AF!%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B7%E3%83%A3%E3%83%AB%E3%82%B9%E3%83%88%E3%82%A2%E3%81%A7%E5%AE%89%E5%BF%83%E3%81%A7%E3%81%8A%E5%BE%97%E3%81%AA%E8%BB%8A%E6%8E%A2%E3%81%97%20-%20%E3%83%A9%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AA%E3%82%89%E4%BA%BA%E6%B0%97%E8%BB%8A%E7%A8%AE%E3%81%8C50%E4%B8%87%E5%86%86%E3%82%82%E3%81%8A%E5%BE%97%EF%BC%81&amp;type=share&amp;url=http%3A%2F%2Fcar.auctions.yahoo.co.jp%2Fcar_promo%2Flion_nw%2F201506%2F%23domestic_u30" style="position: static; visibility: visible; width: 75px; height: 20px;"></iframe>
+                            <!--<![endif]-->
+
+                            // Yahoo! JAPANリンク
+                            p.Header__yj
+                                a.Header__yjLink(href="https://www.yahoo.co.jp/") Yahoo! JAPAN
+
+                            // 掲載期間
+                            p.Header__period
+                                | 掲載期間：　2016/00/00(金)　〜　2016/00/00(金)
+
+                        // リンク
+                        |<!--
+                        ul.Header__others
+                            li.Header__othersItem
+                                a.Header__othersLink(href="https://www.yahoo.co.jp/") Yahoo! JAPAN
+                                | &nbsp;-&nbsp;
+                            li.Header__othersItem.Header__othersItem--beginner
+                                a.Header__othersLink(href="https://auctions.yahoo.co.jp/guide/guide/index.html") 初めての方へ
+                                | &nbsp;-&nbsp;
+                            li.Header__othersItem
+                                a.Header__othersLink(href="https://www.yahoo-help.jp/app/home/p/353/") ヘルプ
+                        |-->
+
+                        // コブランドロゴ
+                        |<!--
+                        p.Header__cobrandLogo
+                            a.Header__cobrandLogoLink(href="#") 協力
+                        |-->
+
+            // /#header
+        // /.l-inner
+    // /.l-header

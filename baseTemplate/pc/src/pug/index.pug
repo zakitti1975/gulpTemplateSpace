@@ -1,0 +1,84 @@
+include module/_head
+body
+    //.l-wrapper
+    .l-wrapper
+
+        // ★★★★★★★★★★★★★★★★★★　共通ヘッダーここから（原則変更不可） ★★★★★★★★★★★★★★★★★★
+        include module/_header
+        // /★★★★★★★★★★★★★★★★★★　共通ヘッダーここまで（原則変更不可） ★★★★★★★★★★★★★★★★★★
+        
+        // .l-content
+        .l-content
+            
+            // .l-contentHead
+            .l-contentHead.js-promotion-stickyNavStart
+                .l-inner
+                    // ★★★★★★★★★★★★★★★★★★　キービジュアルここから（レイアウトによってはcontentHead不要） ★★★★★★★★★★★★★★★★★★
+                    p(style="background: #000;color:#fff;padding:10px;margin:10px 0;text-align:center;") キービジュアルここから
+                    //- 以下、サンプルのpugソースの書き方です
+                    //- 利用するときは以下を削除してください
+                    div.SampleKeyVisual
+                        h1.SampleKeyVisual__title タイトル
+                        p.SampleKeyVisual__link
+                            a.js-promotion-scroller(href="#testanchor") ページ内リンク（クリック元はこのHTMLのように指定してください）
+
+                    // /★★★★★★★★★★★★★★★★★★　キービジュアルここまで（レイアウトによってはcontentHead不要） ★★★★★★★★★★★★★★★★★★
+                // /.l-inner
+            // /.l-contentHead
+
+
+            // .l-contentBody
+            .l-contentBody
+                .l-inner
+                    // ★★★★★★★★★★★★★★★★★★　メインコンテンツここから ★★★★★★★★★★★★★★★★★★
+                    p(style="background: #000;color:#fff;padding:10px;margin:10px 0;text-align:center;") メインコンテンツここから
+                    //- 以下、サンプルのpugソースの書き方です
+                    //- 利用するときは以下を削除してください
+                    div.SampleImages
+                        ul.SampleImages__list
+                            li.SampleImages__item.SampleImages__item--sample01 サンプル1
+                            li.SampleImages__item.SampleImages__item--sample02 サンプル2
+                            li.SampleImages__item.SampleImages__item--sample03 サンプル3
+                            li.SampleImages__item.SampleImages__item--sample04 サンプル4
+
+                    p#testanchor(style="border:1px solid #aaa;padding:10px;margin:10px;") ページ内リンク（クリック先はこのHTMLのように指定してください）
+
+                    //-読み込まないファイルは削除して下さい（CSSはあらかじめcommon.cssに含まれているので削除不要）
+                    include module/_products
+                    include module/_download
+
+                    include module/_download
+                    include module/_carousel
+                    include module/_notes
+                        // /★★★★★★★★★★★★★★★★★★　　メインコンテンツここまで ★★★★★★★★★★★★★★★★★★
+                // /.l-inner
+            // /.l-contentBody
+
+
+            // .l-contentFoot
+            .l-contentFoot
+                .l-inner 
+                    // ★★★★★★★★★★★★★★★★★★　　付加情報系コンテンツここから（レイアウトによってはcontentFoot不要）  ★★★★★★★★★★★★★★★★★★
+                    //-読み込まないファイルは削除して下さい（CSSはあらかじめcommon.cssに含まれているので削除不要）
+                    include module/_banner
+                    include module/_knowledge
+                    // /★★★★★★★★★★★★★★★★★★　　付加情報系コンテンツここまで（レイアウトによってはcontentFoot不要）  ★★★★★★★★★★★★★★★★★★
+                // /.l-inner
+            // /.l-contentFoot
+
+            
+        // /.l-content
+
+        // ★★★★★★★★★★★★★★★★★★　共通フッターここから（原則変更不可） ★★★★★★★★★★★★★★★★★★
+        include module/_footer
+        // /★★★★★★★★★★★★★★★★★★　共通フッターここまで（原則変更不可） ★★★★★★★★★★★★★★★★★★
+
+    // /.l-wrapper
+
+    //-読み込まないファイルは削除して下さい（CSSはあらかじめcommon.cssに含まれているので削除不要）
+    include module/_sidenav
+
+    include module/_anchor
+    include module/_foot
+| 
+|</html>

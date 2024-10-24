@@ -1,0 +1,123 @@
+//- MT環境用と通常のローカル確認環境用とにソースを出し分けたい場合、
+//- 以下のようにif文で記述します。（productionという変数はgulpfile.js内で定義してあり、
+//- 両方のソースを出し分けてビルドする設定がしてあります）
+if production == true
+    //- 本番MT用(PHP等のソースが入ったもの)
+    |<?php
+    |// 共通テキスト、パスを格納しておく
+    | 
+    |//スペースID（※：必須）
+    |$spaceId = '2084000003';
+    | 
+    |// サイトURL（※）
+    |$siteUrl = '●●●●●●●●';
+    | 
+    |// タイトル（※）
+    |$metaTitle = '●●●●●●●●';
+    | 
+    |// キーワード（※）
+    |$metaKeyword = '●●●●●●●●';
+    | 
+    |// ディスクリプション（※）
+    |$metaDescription = '●●●●●●●●';
+    | 
+    |// ツイッター追記文言（デフォルトはページタイトル＋ディスクリプションなので、必要に応じて書き換えてください）
+    |$twitterText = $metaTitle.$metaDescription;
+    | 
+    |// ツイッターハッシュタグ（複数設定の場合はカンマで繋げて記述、ハッシュタグない場合は必ず空欄か行ごと削除してください）
+    |$twitterHash = 'ヤフー,ヤフオク';
+    | 
+    |// ogpサイトURL（デフォルトはサイトURLなので、必要に応じて書き換えてください）（※）
+    |$twitterShareUrl = $siteUrl;
+    |$facebookShareUrl = $siteUrl;
+    | 
+    |// ogp画像パス（※）
+    |$ogpImageUrl = '●●●●●●●●';
+    | 
+    |// 外部会社サイトのURL
+    |//$cobrandLinkUrl = 'https://www.yahoo.co.jp';
+    | 
+    |// 外部会社ロゴのURL
+    |//$cobrandImageUrl = 'http://dummyimg.corp.yahoo.co.jp/160x40';
+    | 
+    |//キャンペーン期間(ヘッダー)
+    |$period = '0000年00月00日（月）〜00月00日（月）';
+    | 
+    |//キャンペーン期間(キャンペーン詳細)
+    |$periodDetail = '0000年00月00日（月）正午〜00月00日（月）正午';
+    | 
+    |// 終了しました文言開始時間
+    |$closeNoticeFrom = '2016/07/21 00:00:05';
+    | 
+    |//ULTのContType（ページごとに設定が必要です）（※）
+    |$ultContType = '●●●●●●●●';
+    | 
+    |//ULTのsec名(集計対象とする divタグの id を設定（不要なidは削除してください。）（※）
+    |$ultSecArray = '["header","navi","navi_stl",
+    |    "itemgroup_a1","itemgroup_a2","itemgroup_a3","itemgroup_a4","itemgroup_a5",
+    |    "itemgroup_b1","itemgroup_b2","itemgroup_b3","itemgroup_b4","itemgroup_b5",
+    |    "prinfou","prinfob","other_cp","app","prdtl",
+    |    "prbnr1","moreauc","footer",
+    |    "c_header","c_prbnr","c_navi"]';
+    | 
+    |$adLookup = array('EMG','EMG2','EMG3','SPFLG');
+    |$adsN = yahoo_ads_lookup('jp', $adLookup, $spaceId );
+    | 
+    | 
+    |?>
+    |<MTInclude blog_id="444" module="pc_include_path">
+    |<!DOCTYPE html>
+    |<!--[if lt IE 7]><html class="lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="ja-JP"><![endif]-->
+    |<!--[if IE 7]><html class="lt-ie10 lt-ie9 lt-ie8" lang="ja-JP"><![endif]-->
+    |<!--[if IE 8]><html class="lt-ie10 lt-ie9" lang="ja-JP"><![endif]-->
+    |<!--[if IE 9]><html class="lt-ie10" lang="ja-JP"><![endif]-->
+    |<!--[if gt IE 9]><!--><html lang="ja-JP"><!--<![endif]-->
+    head
+        |<meta charset="utf-8">
+        |<title><?php echo $metaTitle; ?></title>
+        |<meta name="robots" content="index,follow,noarchive">
+        |<meta name="keywords" content="<?php echo $metaKeyword; ?>">
+        |<meta name="description" content="<?php echo $metaDescription; ?>">
+        |<meta name="viewport" content="width=1100,user-scalable=yes">
+        |<link rel="apple-touch-icon" href="https://s.yimg.jp/images/ipn/wcb/realestate129.png">
+        |<meta name="twitter:card" content="summary">
+        |<meta name="twitter:site" content="@yjrealestate">
+        |<meta property="og:type" content="website">
+        |<meta property="og:site_name" content="Yahoo!不動産">
+        |<meta property="fb:app_id" content="424541754246649">
+        |<meta property="og:title" content="<?php echo $metaTitle; ?>">
+        |<meta property="og:url" content="<?php echo $siteUrl; ?>">
+        |<meta property="og:image" content="<?php echo $ogpImageUrl; ?>">
+        |<meta property="og:description" content="<?php echo $metaDescription; ?>">
+        |<link rel="stylesheet" href="https://s.yimg.jp/images/auct/cms/common/pc/css/1.0.0/common.min.css?<?php echo date('YmdGi');?>" media="all">
+        |<!-- 各ページCSS -->
+        |<link href="../css/index.css?<?php echo date('YmdGi');?>" rel="stylesheet" type="text/css" media="all">
+else
+    //- 表示確認テンプレート用
+    doctype html
+    | 
+    |<!--[if lt IE 7]><html class="lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="ja-JP"><![endif]-->
+    |<!--[if IE 7]><html class="lt-ie10 lt-ie9 lt-ie8" lang="ja-JP"><![endif]-->
+    |<!--[if IE 8]><html class="lt-ie10 lt-ie9" lang="ja-JP"><![endif]-->
+    |<!--[if IE 9]><html class="lt-ie10" lang="ja-JP"><![endif]-->
+    |<!--[if gt IE 9]><!--><html lang="ja-JP"><!--<![endif]-->
+    head
+        meta(charset="utf-8")
+        title ●●●●●●●●
+        meta(name="robots",content="index,follow,noarchive")
+        meta(name="keywords",content="●●●●●●●●")
+        meta(name="description",content="●●●●●●●●")
+        meta(name="viewport",content="width=1100,user-scalable=yes")
+        link(rel="apple-touch-icon",href="https://s.yimg.jp/images/ipn/wcb/realestate129.png")
+        meta(name="twitter:card",content="summary")
+        meta(name="twitter:site",content="@8209")
+        meta(property="og:type",content="website")
+        meta(property="og:site_name",content="ヤフオク!")
+        meta(property="fb:app_id",content="311039895631190")
+        meta(property="og:title",content="●●●●●●●●")
+        meta(property="og:url",content="●●●●●●●●")
+        meta(property="og:image",content="●●●●●●●●")
+        meta(property="og:description",content="●●●●●●●●")
+        link(rel="stylesheet",href="https://s.yimg.jp/images/auct/cms/common/pc/css/1.0.0/common.min.css",media="all")
+        // 各ページCSS 
+        link(rel="stylesheet",href="../css/index.css",media="all")

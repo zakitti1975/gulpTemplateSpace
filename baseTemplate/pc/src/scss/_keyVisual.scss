@@ -1,0 +1,56 @@
+@charset "UTF-8";
+// 利用するときは以下を削除してください
+.SampleKeyVisual {
+        background: url(../img/bg_sample_kv_01.png) no-repeat 0 0;
+        background-size: 100% auto;
+    &__title {
+        @include sample-mixin() // mixinの呼び出し（_mixin.scss）
+        width: 950px;
+        height: 0;
+        padding-top: 200px/950px*100%;
+
+        margin-bottom: 10px;
+    }
+    &__link {
+        text-align: center;
+    }
+}
+.SampleImages {
+    &__list {
+        @extend %clearfix; // placeholderの呼び出し（_mixin.scss）
+        text-align: center;
+    }
+    &__item {
+        display: inline-block;
+        margin: 10px;
+        text-indent: -9999px;
+
+        &--sample01 {
+                @include sprite($sprite-bg-sample-01);// CSSスプライトの呼び出し（gulp実行すると自動生成される_sprite.scssにmixinが定義されています）
+                //
+                // ■retinaでない画像の時
+                // 1. @include sprite();のカッコ内に
+                // 2. $sprite-{src/img/sprite/以下の画像のパスをハイフンでつないだもの}　を記載します。
+                // 例)ex)「bg_sample_01.png」の場合　→ @include sprite($sprite-bg-sample-01);
+                //
+                // ■retina対応する時
+                // 1. Gulpfile.js内のretina用の設定が有効になっていることを確認してください。
+                // 2. @include retina-sprite();のカッコ内に
+                // 3. $sprite-{src/img/sprite/以下の画像のパスをハイフンでつないだもの}-group　を記載します。
+                // ex)「bg_sample_01.png」「bg_sample_01_2x.png」の場合　→ @include retina-sprite($sprite-bg-sample-01-group);
+        }
+        &--sample02 {
+                @include sprite($sprite-bg-sample-02); // CSSスプライトの呼び出し（_sprite.scss）
+                //@include retina-sprite($sprite-bg-sample-02-group); // retinaの場合の呼び出し
+        }
+        &--sample03 {
+                @include sprite($sprite-bg-sample-03); // CSSスプライトの呼び出し（_sprite.scss）
+                //@include retina-sprite($sprite-bg-sample-03-group); // retinaの場合の呼び出し
+        }
+        &--sample04 {
+                @include sprite($sprite-bg-sample-04); // CSSスプライトの呼び出し（_sprite.scss）
+                //@include retina-sprite($sprite-bg-sample-04-group); // retinaの場合の呼び出し
+        }
+    }
+
+}

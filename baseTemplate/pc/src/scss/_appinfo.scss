@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+.Appinfo {
+	margin: 40px 0;
+	&__inner {
+		width: 950px;
+		margin: 0 auto;
+	}
+	&__header {
+		margin-bottom: 16px;
+	}
+	&__title {
+		text-align: center;
+		font-size: 26px;
+		background-image: url(https://s.yimg.jp/images/auct/cms/common/pc/img/1.0.0/spr_common_04.png);
+		background-position: 0px 0px;
+		width: 573px;
+		height: 54px;
+		margin: 0 auto;
+		text-indent: -9999px;
+	}
+	&__body {
+		margin-bottom: 14px;
+	}
+	&__item {
+		padding: 28px 25px 28px 83px;
+	}
+	&__item + &__item {
+		border-top: 1px solid #dddbd4;
+	}
+	&__deviceHeader {
+		float: left;
+		width: 293px;
+	}
+	&__deviceTitle {
+		display: block;
+		text-indent: -9999px;
+	}
+	&__deviceTitle--smartphone {
+		background-image: url(https://s.yimg.jp/images/auct/cms/common/pc/img/1.0.0/spr_common_04.png);
+		background-position: -870px -64px;
+		width: 224px;
+		height: 80px;
+	}
+	&__deviceBody {
+		overflow: hidden;
+	}
+	&__deviceItem {
+		width: 49.99%;
+		float: left;
+	}
+	&__link {
+		display: block;
+		text-indent: -9999px;
+	}
+	&__link--smartphoneiOS {
+		background-image: url(https://s.yimg.jp/images/auct/cms/common/pc/img/1.0.0/spr_common_04.png);
+		background-position: 0px -273px;
+		width: 214px;
+		height: 84px;
+	}
+	&__link--smartphoneAndroid {
+		background-image: url(https://s.yimg.jp/images/auct/cms/common/pc/img/1.0.0/spr_common_04.png);
+		background-position: -448px -273px;
+		width: 214px;
+		height: 83px;
+	}
+	&__link:hover {
+		opacity: 0.65;
+		filter: alpha(opacity=65);
+	}
+	&__note {
+		font-size: 75%;
+		text-align: right;
+	}
+}

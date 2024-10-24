@@ -1,0 +1,44 @@
+if production == true
+    |<!--======================= moreauc-appinfo=======================-->
+    | <$mt:Include module="【仮版】PC版フッター上共通"$>
+    |<!--======================= ./moreauc-appinfo=======================-->
+else
+    // .Appinfo
+    #appinfo.Appinfo
+        .Appinfo__inner
+            .Appinfo__header
+                .Appinfo__title ヤフオク!公式アプリなら大事な情報を見逃さない 今すぐ無料でダウンロード
+            .Appinfo__body
+                ul.Appinfo__items
+                    li.Appinfo__item
+                        dl.Appinfo__device
+                            dt.Appinfo__deviceHeader
+                                span.Appinfo__deviceTitle.Appinfo__deviceTitle--smartphone スマートフォン版ヤフオク!
+                            dd.Appinfo__deviceBody
+                                ul.Appinfo__deviceItems
+                                    li.Appinfo__deviceItem
+                                        a.Appinfo__link.Appinfo__link--smartphoneiOS(href='https://itunes.apple.com/jp/app/apple-store/id356968629?mt=8', data-ylk='slk:sp_ios') iPhone/iPod touch
+                                    li.Appinfo__deviceItem
+                                        a.Appinfo__link.Appinfo__link--smartphoneAndroid(href='https://play.google.com/store/apps/details?id=jp.co.yahoo.android.yauction', data-ylk='slk:sp_and') Android
+            .Appinfo__footer
+                p.Appinfo__note スマートフォンでバーコードを読み取るには、専用のアプリが必要です。
+    // /.Appinfo
+
+
+
+    // ★★★ULTパラメータ#moreauc
+    #moreauc
+        // .Knowledge
+        .Knowledge
+            .Knowledge__inner
+                .Knowledge__header
+                    .Knowledge__title.Knowledge__title--normal もっと知りたい、ヤフオク!
+                .Knowledge__body
+                    ul.Knowledge__items
+                        li.Knowledge__item.Knowledge__item--safesupport
+                            a.Knowledge__link(href='https://auctions.yahoo.co.jp/guide/guide/safesupport/') 安心安全の取り組み
+                        li.Knowledge__item.Knowledge__item--infographic
+                            a.Knowledge__link(href="https://auctions.yahoo.co.jp/topic/promo/infographic/") 数字で見るヤフオク!
+                        li.Knowledge__item.Knowledge__item--guide
+                            a.Knowledge__link(href="https://auctions.yahoo.co.jp/guide/guide/index.html") 使い方ガイド
+        // /.Knowledge

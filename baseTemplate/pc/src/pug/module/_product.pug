@@ -1,0 +1,42 @@
+mixin Product(idx)
+    // .Product
+    a(href="#").Product
+        span.Product__thumb
+            -
+                var w = [178, 100, 178, 150, 100];
+                var h = [100, 178, 178, 100, 150];
+                var catText = [
+                        'カテゴリ名カテゴリ名カテゴリ名カテゴリ名',
+                        'カテゴリ名カテゴリ名',
+                        'カテゴリ名カテゴリ名カテゴリ名カテゴリ名',
+                        'カテゴリ名カテゴリ名',
+                        'カテゴリ名カテゴリ名カテゴリ名カテゴリ名'
+                    ];
+                var nameText = [
+                        '商品名です商品名です商品名です商品名です商品名です商品名です',
+                        '商品名です商品名です',
+                        '商品名です商品名です商品名です商品名です商品名です商品名です',
+                        '商品名です商品名です商品名です',
+                        '商品名です商品名です商品名です商品名です商品名です商品名です'
+                    ];
+
+
+            img.Product__image(src=`http://dummyimg.corp.yahoo.co.jp/${w[idx]}x${h[idx]}`,alt="代替テキスト")
+        span.Product__category #{catText[idx]}
+        span.Product__name  #{nameText[idx]}
+        span.Product__startPrice
+            span.Product__label 開始価格：
+            span.Product__value 13,300
+            span.Product__unit 円
+        span.Product__bids
+            span.Product__label 入札：
+            span.Product__value 2
+        span.Product__time
+            span.Product__label 残り：
+            span.Product__value 23
+            span.Product__unit 時間
+        span.Product__currentPrice
+            span.Product__label 現在：
+            span.Product__value 20,800
+            span.Product__unit 円
+    // /.Product

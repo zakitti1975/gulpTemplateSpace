@@ -1,0 +1,40 @@
+include _product
+#itemgroup_a1
+    // .Products
+    .Products
+        .Products__inner
+            |<!--
+            .Products__header
+                .Products__title 商品のリスト
+            |-->
+            .Products__body
+                ul.Products__items.js-promotion-flatHeight
+                    li.Products__item
+                        +Product(0)
+                    li.Products__item
+                        +Product(1)
+                    li.Products__item
+                        +Product(2)
+                    li.Products__item
+                        +Product(3)
+                    li.Products__item
+                        +Product(4)
+                    li.Products__item
+                        +Product(0)
+                    li.Products__item
+                        +Product(1)
+                    li.Products__item
+                        +Product(2)
+                    li.Products__item
+                        +Product(3)
+            .Products__footer
+                p.Products__buttonArea
+                    a.Products__button.Products__button--all(href="#") 
+                        span.Products__buttonText 商品をもっと見る
+            |<!-- 背景が暗い時
+            .Products__footer
+                p.Products__buttonArea
+                    a.Products__button.Products__button--all.Products__button--dark(href="#") 
+                        span.Products__buttonText 商品をもっと見る
+            |-->
+    // /.Products

@@ -1,0 +1,187 @@
+//- MT環境用と通常のローカル確認環境用とにソースを出し分けたい場合、
+//- 以下のようにif文で記述します。（productionという変数はgulpfile.js内で定義してあり、
+//- 両方のソースを出し分けてビルドする設定がしてあります）
+if production == true
+    //- 本番MT用(PHP等のソースが入ったもの)
+    |<$mt:Include module="【仮版】PC共通ページフッター（2018/11）"$>
+    |<MTIgnore>
+    |<!--MTInclude blog_id="444" module="共通ページフッター（2016/09版）"--><!-- ★★★通常のフッター★★★ -->
+    |<!--MTInclude blog_id="444" module="共通ページフッター（2016/09版）" type="guide"--><!-- ★★★ガイドのフッター★★★ -->
+    |<!--MTInclude blog_id="444" module="共通ページフッター（2016/09版）" type="external"--><!-- ★★★外部フッター★★★ -->
+    |<!--MTInclude blog_id="444" module="共通ページフッター（2016/09版）" hasSearch="true" hasLogo="true" hasOfficial="true"--><!-- ★★★全オプション★★★ -->
+    |</MTIgnore>
+else 
+
+    //- 表示確認テンプレート用
+    // .l-footer
+    .l-footer
+        .l-inner
+            // .PageTopNav
+            .PageTopNav.js-promotion-pageTopNav
+                a.PageTopNav__link.js-promotion-pageTopNavBtn(href="#content") ▲このページのトップへ
+            // /.PageTopNav
+
+            //- ガイド用フッター（利用時はコメントアウトを外す）
+                // #footer
+                .Footer.Footer--guide#footer
+
+                    // .FooterLogo
+                    p.FooterLogo
+                        a.FooterLogo__link(href="https://auctions.yahoo.co.jp/") ヤフオク!
+                    // /.FooterLogo
+
+                    // .FooterList
+                    .FooterList 
+                        ul.FooterList__items
+                            li.FooterList__item
+                                a.FooterList__link(href="https://privacy.yahoo.co.jp/") プライバシー
+                            li.FooterList__item
+                                a.FooterList__link(href="https://about.yahoo.co.jp/docs/info/terms/") 利用規約
+                            li.FooterList__item
+                                a.FooterList__link(href="https://premium.yahoo.co.jp/info/guidelines.html/?sc_yprec=yyac_footer") プレミアム利用ガイド
+                            li.FooterList__item
+                                a.FooterList__link(href="https://auctions.yahoo.co.jp/html/guidelines.html") ガイドライン
+                            li.FooterList__item
+                                a.FooterList__link(href="https://auctions.yahoo.co.jp/jp/html/tokushoho.html") 特定商取引法の表示
+                            li.FooterList__item
+                                a.FooterList__link(href="https://business-ec.yahoo.co.jp/auctions/index.html") ストア出店について
+                            li.FooterList__item
+                                a.FooterList__link(href="https://www.yahoo-help.jp/app/home/p/353/") ヘルプ・お問い合わせ
+                        p.FooterList__copyright Copyright (C) 2016 Yahoo Japan Corporation. All Rights Reserved.
+                    // /.FooterList
+                // /#footer
+
+            //- 外部用フッター（利用時はコメントアウトを外す）
+                // #footer
+                .Footer.Footer--external#footer
+
+                    
+                    // .FooterLogo
+                    p.FooterLogo
+                        a.FooterLogo__link(href="https://auctions.yahoo.co.jp/") ヤフオク!
+                    // /.FooterLogo
+
+                    // .FooterList
+                    .FooterList 
+                        ul.FooterList__items
+                            li.FooterList__item
+                                a.FooterList__link(href="https://privacy.yahoo.co.jp/") プライバシー
+                            li.FooterList__item
+                                a.FooterList__link(href="https://about.yahoo.co.jp/docs/info/terms/") 利用規約
+                            li.FooterList__item
+                                a.FooterList__link(href="https://premium.yahoo.co.jp/info/guidelines.html/?sc_yprec=yyac_footer") プレミアム利用ガイド
+                            li.FooterList__item
+                                a.FooterList__link(href="https://auctions.yahoo.co.jp/html/guidelines.html") ガイドライン
+                            li.FooterList__item
+                                a.FooterList__link(href="https://auctions.yahoo.co.jp/jp/html/tokushoho.html") 特定商取引法の表示
+                            li.FooterList__item
+                                a.FooterList__link(href="https://business-ec.yahoo.co.jp/auctions/index.html") ストア出店について
+                            li.FooterList__item
+                                a.FooterList__link(href="https://www.yahoo-help.jp/app/home/p/353/") ヘルプ・お問い合わせ
+                        p.FooterList__copyright Copyright (C) 2016 Yahoo Japan Corporation. All Rights Reserved.
+                    // /.FooterList
+                // /#footer
+
+
+            //- 通常フッター
+            // #footer
+            .Footer#footer
+
+                // .FooterSearch
+                .FooterSearch
+                    form(action="https://auctions.yahoo.co.jp/search/search")
+                        ul.FooterSearch__form
+                            fieldset.FooterSearch__selectArea
+                                .FooterSearch__selectAreaInner
+                                    select.FooterSearch__select(name="auccat")
+                                      option(selected="",value="0") すべてのオークション
+                                      option(value="23336") コンピュータ
+                                      option(value="23632") 家電、AV、カメラ
+                                      option(value="22152") 音楽
+                                      option(value="21600") 本、雑誌
+                                      option(value="21964") 映画、ビデオ
+                                      option(value="25464") おもちゃ、ゲーム
+                                      option(value="24242") ホビー、カルチャー
+                                      option(value="20000") アンティーク、コレクション
+                                      option(value="24698") スポーツ、レジャー
+                                      option(value="26318") 自動車、オートバイ
+                                      option(value="23000") ファッション
+                                      option(value="23140") アクセサリー、時計
+                                      option(value="42177") ビューティー、ヘルスケア
+                                      option(value="23976") 食品、飲料
+                                      option(value="24198") 住まい、インテリア
+                                      option(value="2084055844") ペット、生き物
+                                      option(value="22896") 事務、店舗用品
+                                      option(value="26086") 花、園芸
+                                      option(value="2084043920") チケット、金券、宿泊予約
+                                      option(value="24202") ベビー用品
+                                      option(value="2084032594") タレントグッズ
+                                      option(value="20060") コミック、アニメグッズ
+                                      option(value="2084060731") 不動産
+                                      option(value="2084217893") チャリティー
+                                      option(value="26084") その他
+                            fieldset.FooterSearch__keywordArea
+                                span.FooterSearch__keyword
+                                    input.FooterSearch__keywordInput(placeholder="欲しい商品を探す",value="",name="p")
+                            p.FooterSearch__buttonArea
+                                input.FooterSearch__button(type="image",src="//s.yimg.jp/images/clear.gif",value="検索")
+                        input(type="hidden",name="alocale",value="0jp")
+                        input(type="hidden",name="acc",value="jp")
+                        input(type="hidden",name="tab_ex",value="commerce")
+                        input(type="hidden",name="ei",value="utf-8")
+                // /.FooterSearch
+
+                // .FooterLogo
+                //p.FooterLogo
+                //    a.FooterLogo__link(href="https://auctions.yahoo.co.jp/") ヤフオク!
+                // /.FooterLogo
+
+                // .FooterOfficial
+                .FooterOfficial
+                    ul.FooterOfficial__internal
+                        li.FooterOfficial__item.FooterOfficial__item--yahoo
+                            a.FooterOfficial__link(href="https://www.yahoo.co.jp") Yahoo! JAPAN
+                        li.FooterOfficial__item.FooterOfficial__item--yahuoku
+                            a.FooterOfficial__link(href="https://auctions.yahoo.co.jp/") ヤフオク!
+                    ul.FooterOfficial__external
+                        li.FooterOfficial__item.FooterOfficial__item--facebook
+                            a.FooterOfficial__link(href="https://www.facebook.com/YahooAuctionsJp") Facabook
+                        li.FooterOfficial__item.FooterOfficial__item--twitter
+                            a.FooterOfficial__link(href="https://twitter.com/8209/") Twitter
+                        li.FooterOfficial__item.FooterOfficial__item--youtube
+                            a.FooterOfficial__link(href="https://www.youtube.com/channel/UCnma6AyvdVZlP6_4XLOQrGA") YouTube
+                // /.FooterOfficial
+
+                // .FooterDeviceNav
+                .FooterDeviceNav
+                    .FooterDeviceNav__items
+                        dt.FooterDeviceNav__title 表示
+                        dd.FooterDeviceNav__item.FooterDeviceNav__item--first
+                            a.FooterDeviceNav__link(href="#",onclick="(function(){ var a='/YJDSET/smartphone'; var b=''; var x=new XMLHttpRequest();x.open('GET',a,0);x.send(null);document.location.href=b; })();return false;") モバイル
+                        dd.FooterDeviceNav__item
+                            span.FooterDeviceNav__link パソコン
+                            
+                // /.FooterDeviceNav
+
+                // .FooterList
+                .FooterList 
+                    ul.FooterList__items
+                        li.FooterList__item
+                            a.FooterList__link(href="https://privacy.yahoo.co.jp/") プライバシー
+                        li.FooterList__item
+                            a.FooterList__link(href="https://about.yahoo.co.jp/docs/info/terms/") 利用規約
+                        li.FooterList__item
+                            a.FooterList__link(href="https://premium.yahoo.co.jp/info/guidelines.html/?sc_yprec=yyac_footer") プレミアム利用ガイド
+                        li.FooterList__item
+                            a.FooterList__link(href="https://auctions.yahoo.co.jp/html/guidelines.html") ガイドライン
+                        li.FooterList__item
+                            a.FooterList__link(href="https://auctions.yahoo.co.jp/jp/html/tokushoho.html") 特定商取引法の表示
+                        li.FooterList__item
+                            a.FooterList__link(href="https://business-ec.yahoo.co.jp/auctions/index.html") ストア出店について
+                        li.FooterList__item
+                            a.FooterList__link(href="https://www.yahoo-help.jp/app/home/p/353/") ヘルプ・お問い合わせ
+                    p.FooterList__copyright Copyright (C) 2016 Yahoo Japan Corporation. All Rights Reserved.
+                // /.FooterList
+            // /#footer
+        // /.l-inner
+    // /.l-footer
