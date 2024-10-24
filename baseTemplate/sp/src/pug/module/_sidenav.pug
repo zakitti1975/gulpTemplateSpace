@@ -1,0 +1,168 @@
+//- MT環境用と通常のローカル確認環境用とにソースを出し分けたい場合、
+//- 以下のようにif文で記述します。（productionという変数はgulpfile.js内で定義してあり、
+//- 両方のソースを出し分けてビルドする設定がしてあります）
+if production == true
+
+    //- 本番MT用(PHP等のソースが入ったもの)
+    | 
+    |<?php
+    |//
+    |//
+    |//  !!QA環境用のURLになっていないか確認!!
+    |//
+    |//
+    |function getSideNavLinkUrl() {
+    |    // ここに20周年の6個分のurlを並べる。
+    |    $linkUrl['top']             = 'yj20th/';
+    |    $linkUrl['twitter']         = 'yj20th/twitter/';
+    |    $linkUrl['carselection']    = 'yj20th/carselection/';
+    |    $linkUrl['appevent']        = 'yj20th/appevent/';
+    |    $linkUrl['appsale']         = 'yj20th/appsale/';
+    |    $linkUrl['sellpoint_cp']    = 'yj20th/sellpoint_cp/';
+    |    return $linkUrl;
+    |}
+    |$sidenav_linkUrl        = getSideNavLinkUrl();
+    |?>
+    |<!-- .SideNav-->
+    |<!-- ★★★ULTパラメータ#c_navi-->
+    |<div id="c_navi" class="SideNav">
+    |    <div class="SideNav__inner">
+    |        <div class="SideNav__body">
+    |            <MTSelfUrlIf path="/promo/yj20th/index.html">
+    |            <p class="SideNav__top is-promotion-current">
+    |                <span class="SideNav__topIcon">TOP</span>
+    |                <span class="SideNav__topLink">ヤフオク!特設ページトップ</span>
+    |            </p>
+    |            <MTSelfUrlElse>
+    |            <p class="SideNav__top">
+    |                <span class="SideNav__topIcon">TOP</span>
+    |                <a href="<$mt:BlogURL$><?php echo $sidenav_linkUrl['top'] ?>" class="SideNav__topLink" data-ylk="pos:1">ヤフオク!特設ページトップ</a>
+    |            </p>
+    |            </MTSelfUrlIf>
+    |            <ol class="SideNav__items">
+    |                <MTSelfUrlIf path="/promo/yj20th/twitter/index.html">
+    |                <li class="SideNav__item SideNav__item--01 is-promotion-current">
+    |                    <span class="SideNav__icon">01</span>
+    |                    <span class="SideNav__link">コンテンツ1コンテンツ1</span>
+    |                </li>
+    |                <MTSelfUrlElse>
+    |                <li class="SideNav__item SideNav__item--01 ">
+    |                    <span class="SideNav__icon">01</span>
+    |                    <a href="<$mt:BlogURL$><?php echo $sidenav_linkUrl['twitter'] ?>" class="SideNav__link" data-ylk="pos:2">コンテンツ1コンテンツ1</a>
+    |                </li>
+    |                </MTSelfUrlIf>
+    |                <MTSelfUrlIf path="/promo/yj20th/carselection/index.html">
+    |                <li class="SideNav__item SideNav__item--02 is-promotion-current">
+    |                    <span class="SideNav__icon">02</span>
+    |                    <span class="SideNav__link">コンテンツ2コンテンツ2</span>
+    |                </li>
+    |                <MTSelfUrlElse>
+    |                <li class="SideNav__item SideNav__item--02">
+    |                    <span class="SideNav__icon">02</span>
+    |                    <a href="<$mt:BlogURL$><?php echo $sidenav_linkUrl['carselection'] ?>" class="SideNav__link" data-ylk="pos:3">コンテンツ2コンテンツ2</a>
+    |                </li>
+    |                </MTSelfUrlIf>
+    |                <MTSelfUrlIf path="/promo/yj20th/index.html">
+    |                <li class="SideNav__item SideNav__item--03 is-promotion-current">
+    |                    <span class="SideNav__icon">03</span>
+    |                    <a href="#" class="SideNav__link" data-ylk="pos:4">コンテンツ3コンテンツ3</a>
+    |                </li>
+    |                <MTSelfUrlElse>
+    |                <li class="SideNav__item SideNav__item--03">
+    |                    <span class="SideNav__icon">03</span>
+    |                    <a href="<$mt:BlogURL$><?php echo $sidenav_linkUrl['top'] ?>" class="SideNav__link" data-ylk="pos:4">コンテンツ3コンテンツ3</a>
+    |                </li>
+    |                </MTSelfUrlIf>
+    |                <MTSelfUrlIf path="/promo/yj20th/appevent/index.html">
+    |                <li class="SideNav__item SideNav__item--04 is-promotion-current">
+    |                    <span class="SideNav__icon">04</span>
+    |                    <span class="SideNav__link">コンテンツ4コンテンツ4</span>
+    |                </li>
+    |                <MTSelfUrlElse>
+    |                <li class="SideNav__item SideNav__item--04">
+    |                    <span class="SideNav__icon">04</span>
+    |                    <a href="<$mt:BlogURL$><?php echo $sidenav_linkUrl['appevent'] ?>" class="SideNav__link" data-ylk="pos:5">コンテンツ4コンテンツ4</a>
+    |                </li>
+    |                </MTSelfUrlIf>
+    |                <MTSelfUrlIf path="/promo/yj20th/appsale/index.html">
+    |                <li class="SideNav__item SideNav__item--05 is-promotion-current">
+    |                    <span class="SideNav__icon">05</span>
+    |                    <span class="SideNav__link js-promotion-sideNavBtn">コンテンツ5コンテンツ5</span>
+    |                </li>
+    |                <MTSelfUrlElse>
+    |                <li class="SideNav__item SideNav__item--05">
+    |                    <span class="SideNav__icon">05</span>
+    |                    <a href="<$mt:BlogURL$><?php echo $sidenav_linkUrl['appsale'] ?>" class="SideNav__link" data-ylk="pos:6">コンテンツ5コンテンツ5</a>
+    |                </li>
+    |                </MTSelfUrlIf>
+    |                <MTSelfUrlIf path="/promo/yj20th/sellpoint_cp/index.html">
+    |                <li class="SideNav__item SideNav__item--06 is-promotion-current">
+    |                    <span class="SideNav__icon">06</span>
+    |                    <span class="SideNav__link">コンテンツ6コンテンツ6</span>
+    |                </li>
+    |                <MTSelfUrlElse>
+    |                <li class="SideNav__item SideNav__item--06">
+    |                    <span class="SideNav__icon">06</span>
+    |                    <a href="<$mt:BlogURL$><?php echo $sidenav_linkUrl['sellpoint_cp'] ?>" class="SideNav__link" data-ylk="pos:7">コンテンツ6コンテンツ6</a>
+    |                </li>
+    |                </MTSelfUrlIf>
+    |            </ol>
+    |        </div>
+    |        <div class="SideNav__footer">
+    |            <dl class="SideNav__pickup">
+    |                <dt class="SideNav__pickupTitle">注目</dt>
+    |                <dd class="SideNav__pickupDescription">
+    |                    <a href="<$mt:BlogURL$><?php echo $sidenav_linkUrl['top'] ?>" class="SideNav__pickupLink" data-ylk="pos:8">
+    |                    <img src="http://dummyimg.corp.yahoo.co.jp/494x120.png" width="247" height="60" class="SideNav__pickupImg">
+    |                    </a>
+    |                </dd>
+    |            </dl>
+    |        </div>
+    |    </div>
+    |</div>
+    |<!-- /.SideNav-->
+    | 
+
+else
+
+    // .SideNav
+    // ★★★ULTパラメータ#c_navi
+    .SideNav#c_navi
+        .SideNav__inner
+            div.SideNav__body
+                p.SideNav__top
+                    span.SideNav__topIcon TOP
+                    a.SideNav__topLink(href="#wrapper")
+                        |ヤフオク!特設ページトップ
+                ol.SideNav__items
+                    li.SideNav__item.SideNav__item--01
+                        span.SideNav__icon 01
+                        a.SideNav__link(href="#")
+                            |コンテンツ1コンテンツ1
+                    li.SideNav__item.SideNav__item--02
+                        span.SideNav__icon 02
+                        a.SideNav__link(href="#")
+                            |コンテンツ1コンテンツ2
+                    li.SideNav__item.SideNav__item--03
+                        span.SideNav__icon 03
+                        a.SideNav__link(href="#")
+                            |コンテンツ1コンテンツ3
+                    li.SideNav__item.SideNav__item--04
+                        span.SideNav__icon 04
+                        a.SideNav__link(href="#")
+                            |コンテンツ1コンテンツ4
+                    li.SideNav__item.SideNav__item--05.is-promotion-current
+                        span.SideNav__icon 05
+                        span.SideNav__link
+                            |コンテンツ1コンテンツ5
+                    li.SideNav__item.SideNav__item--06
+                        span.SideNav__icon 06
+                        a.SideNav__link(href="#")
+                            |コンテンツ1コンテンツ6
+            div.SideNav__footer
+                dl.SideNav__pickup
+                    dt.SideNav__pickupTitle 注目
+                    dd.SideNav__pickupDescription 
+                        a.SideNav__pickupLink(href="#")
+                            img.SideNav__pickupImg(src="http://dummyimg.corp.yahoo.co.jp/494x120",width=247,height=60)
+    // /.SideNav

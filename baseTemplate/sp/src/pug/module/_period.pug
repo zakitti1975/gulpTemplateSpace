@@ -1,0 +1,19 @@
+//- MT環境用と通常のローカル確認環境用とにソースを出し分けたい場合、
+//- 以下のようにif文で記述します。（productionという変数はgulpfile.js内で定義してあり、
+//- 両方のソースを出し分けてビルドする設定がしてあります）
+if production == true
+    //- 本番MT用(PHP等のソースが入ったもの)
+    | 
+    |<?php if (isset($period) && strlen($period) > 0) { ?>
+    |<!-- .Period-->
+    |<div class="Period">掲載期間：<?php echo $period; ?></div>
+    |<!-- /.Period-->
+    |<?php } ?>
+    | 
+
+else 
+    //- 表示確認テンプレート用
+    // .Period
+    .Period 掲載期間：<?php echo $period; ?>
+
+    // /.Period

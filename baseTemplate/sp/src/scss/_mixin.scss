@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+// よく利用する記述はmixin/function/placeholderとしてここに追加してください。
+
+// mixin よく使うスニペットや、出し分けが必要なスニペットなど
+@mixin sample-mixin () {
+    display: block;
+    text-indent: -9999px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+// function よく使う計算処理など
+@function sample-multiple($x, $y) {
+    @return $x * $y;
+}
+
+// placeholder 非推奨ですが、includeごとの文字量が多いときなどで、
+// 出力ソースをカンマでつなぎたいときなど
+%clearfix {
+    *zoom: 1;
+    &:after {
+        display:block;
+        visibility:hidden;
+        clear:both;
+        height:0;
+        content:".";
+    }
+}

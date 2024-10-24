@@ -1,0 +1,34 @@
+//- MT環境用と通常のローカル確認環境用とにソースを出し分けたい場合、
+//- 以下のようにif文で記述します。（productionという変数はgulpfile.js内で定義してあり、
+//- 両方のソースを出し分けてビルドする設定がしてあります）
+if production == true
+    //- 本番MT用(PHP等のソースが入ったもの)
+    |<!-- .Sns-->
+    |<div class="Sns">
+    |    <ul class="Sns__items">
+    |        <li class="Sns__item"><div class="fb-share-button" data-href="<?php echo $facebookShareUrl; ?>" data-type="button_count"></div></li>
+    |        <li class="Sns__item">
+    |            <div class="tw-share-button"  style="display:inline-block;">
+    |            <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $twitterShareUrl; ?>" data-text="<?php echo $title, $twtext; ?>" data-lang="ja" data-hashtags="<?php echo $twitterHash; ?>">ツイート</a>
+    |            </div>
+    |        </li>
+    |        <li class="Sns__item"><div class="line-share-button js-promotion-snsbuttoncheck" style="display:inline-block;"><a href="http://line.naver.jp/R/msg/text/?<?php echo $encTitle, $encUrl;?>"><img src="https://media.line.me/img/button/ja/20x20.png" width="20" height="20" alt="LINEで送る"></a></div></li>
+    |    </ul>
+    |</div>
+    |<!-- /.Sns-->
+
+    
+else 
+    //- 表示確認テンプレート用
+    // .Sns
+    .Sns
+        ul.Sns__items
+            li.Sns__item
+                <div class="fb-share-button" data-href="<?php echo $siteUrl; ?>" data-type="button_count"></div>
+            li.Sns__item
+                <div class="tw-share-button"  style="display:inline-block;">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $siteUrl; ?>" data-text="<?php echo $title, $twtext; ?>" data-lang="ja" data-hashtags="<?php echo $twhash; ?>">ツイート</a>
+                </div>
+            li.Sns__item
+                <div class="line-share-button js-promotion-snsbuttoncheck" style="display:inline-block;"><a href="http://line.naver.jp/R/msg/text/?<?php echo $encTitle, $encUrl;?>"><img src="https://media.line.me/img/button/ja/20x20.png" width="20" height="20" alt="LINEで送る"></a></div
+    // /.Sns

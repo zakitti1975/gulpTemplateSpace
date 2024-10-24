@@ -1,0 +1,14 @@
+// .Search
+.Search
+    form(action="https://auctions.yahoo.co.jp/search/search")
+        .Search__form
+            fieldset.Search__keywordArea
+                span.Search__keyword
+                    input.Search__keywordInput(placeholder="欲しい商品を探す",value="",name="p")
+            p.Search__buttonArea
+                input.Search__button(type="image",src="https://s.yimg.jp/images/clear.gif",value="検索")
+        input(type="hidden",name="alocale",value="0jp")
+        input(type="hidden",name="acc",value="jp")
+        input(type="hidden",name="tab_ex",value="commerce")
+        input(type="hidden",name="ei",value="utf-8")
+// /.Search
