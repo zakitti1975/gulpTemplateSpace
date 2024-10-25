@@ -1,0 +1,53 @@
+//- MT環境用と通常のローカル確認環境用とにソースを出し分けたい場合、
+//- 以下のようにif文で記述します。（productionという変数はgulpfile.js内で定義してあり、
+//- 両方のソースを出し分けてビルドする設定がしてあります）
+if production == true
+    //- 本番MT用(PHP等のソースが入ったもの)
+    | 
+    |<mt:SetVar name="closeNoticeFrom" value="2016/09/07 17:21:05" format="%Y/%m/%d %H:%M:%S"　 trim="1" />
+    |<MTInclude blog_id="455" module="共通ページヘッダー（2016/09版）"><!-- ★★★通常/ガイドのヘッダー★★★ -->
+    |<MTIgnore>
+    |<!--MTInclude blog_id="455" module="共通ページヘッダー（2016/09版）" type="external"--><!-- ★★★外部ヘッダー★★★ -->
+    |<!--MTInclude blog_id="455" module="共通ページヘッダー（2016/09版）" hasYjLink="true"--><!-- ★★★全オプション★★★ -->
+    |</MTIgnore>
+else 
+    // .l-header
+    .l-header
+        .l-inner
+            include _script
+            
+            //- 外部用ヘッダー（利用時はコメントアウトを外す）
+            // #header
+                .Header.Header--external#header
+                    .Header__inner
+
+                            // ブランドロゴ
+                            p.Header__logo
+                                a.Header__logoLink(href="https://auctions.yahoo.co.jp/") ヤフオク!
+
+                            // リンク
+                            ul.Header__others
+                                li.Header__othersItem.Header__othersItem--yahoo
+                                    a.Header__othersLink(href="https://www.yahoo.co.jp/") Yahoo! JAPAN
+                // /#header
+
+            //- 通常・ガイド用ヘッダー
+            // #header
+            .Header#header
+                .Header__inner
+
+                        // ブランドロゴ
+                        p.Header__logo
+                            a.Header__logoLink(href="https://auctions.yahoo.co.jp/") ヤフオク!
+
+                        // リンク
+                        ul.Header__others
+                            li.Header__othersItem.Header__othersItem--yahoo
+                                a.Header__othersLink(href="https://www.yahoo.co.jp/") Yahoo! JAPAN
+            // /#header
+
+            include _mem
+            include _noscriptnotice
+            include _closeNotice
+        // /.l-inner
+    // /.l-header

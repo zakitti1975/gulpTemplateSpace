@@ -1,0 +1,26 @@
+//- MT環境用と通常のローカル確認環境用とにソースを出し分けたい場合、
+//- 以下のようにif文で記述します。（productionという変数はgulpfile.js内で定義してあり、
+//- 両方のソースを出し分けてビルドする設定がしてあります）
+if production == true
+    //- 本番MT用(PHP等のソースが入ったもの)
+    |<!-- .Download-->
+    |<!-- ★★★ULTパラメータ#app★★★-->
+    |<div id="app" class="Download">
+    |<div class="Download__title">指1本でかんたん操作。ヤフオク!公式アプリ</div>
+    |<mt:YahooDeviceIf device="smartphone" os="iOS">
+    |<a href="http://srd.yahoo.jp/auc/safari/appli1v1" data-ylk="slk:sp_ios" class="Download__banner Download__banner--iphone" data-rapid_p="1">今すぐアプリを無料ダウンロード</a>
+    |<mt:YahooDeviceElseIf device="smartphone" os="Android">
+    |<a href="market://details?id=jp.co.yahoo.android.yauction" data-ylk="slk:sp_and" class="Download__banner Download__banner--android" data-rapid_p="1"> 今すぐアプリを無料ダウンロード</a>
+    |</mt:YahooDeviceIf>
+    |</div>
+    |<!-- /.Download-->
+
+else
+
+    // .Download
+    // ★★★ULTパラメータ#app★★★
+    .Download#app
+        .Download__title 指1本でかんたん操作。ヤフオク!公式アプリ
+        a(href="http://srd.yahoo.jp/auc/safari/appli1v1" class="#{bgWhite}", data-ylk="slk:sp_ios").Download__banner.Download__banner--iphone 今すぐアプリを無料ダウンロード
+        a(href="market://details?id=jp.co.yahoo.android.yauction" class="#{bgWhite}", data-ylk="slk:sp_and").Download__banner.Download__banner--android  今すぐアプリを無料ダウンロード
+    // /.Download

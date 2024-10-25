@@ -1,0 +1,23 @@
+if production == true
+    // ★★★ULTパラメータ#moreauc
+    |<!--======================= moreauc-appinfo=======================-->
+    |<$mt:Include module="【仮版】SP版フッター上共通"$>
+    |<!--======================= ./moreauc-appinfo=======================-->
+else
+    // ★★★ULTパラメータ#moreauc
+    #moreauc
+        // .Knowledge
+        .Knowledge
+            .Knowledge__inner
+                .Knowledge__header
+                    .Knowledge__title.Knowledge__title--normal もっと知りたい、ヤフオク!
+                .Knowledge__body
+                    ul.Knowledge__items
+                        li.Knowledge__item.Knowledge__item--safesupport
+                            a.Knowledge__link(href='https://auctions.yahoo.co.jp/guide/guide/safesupport/', data-rapid_p='1') 安心安全の取り組み
+                        li.Knowledge__item.Knowledge__item--about
+                            a.Knowledge__link(href='https://topic.auctions.yahoo.co.jp/promo/about', data-rapid_p='2') ヤフオク!について
+                        li.Knowledge__item.Knowledge__item--guide
+                            a.Knowledge__link(href='https://auctions.yahoo.co.jp/guide/guide/index.html', data-rapid_p='3') 使い方ガイド
+
+        // /.Knowledge

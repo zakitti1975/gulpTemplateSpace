@@ -1,0 +1,130 @@
+//- MT環境用と通常のローカル確認環境用とにソースを出し分けたい場合、
+//- 以下のようにif文で記述します。（productionという変数はgulpfile.js内で定義してあり、
+//- 両方のソースを出し分けてビルドする設定がしてあります）
+if production == true
+
+    //- 本番MT用(PHP等のソースが入ったもの)
+    | 
+    |<$mt:Include module="【仮版】SP共通ページフッター（2018/11）"$>
+    |<MTIgnore>
+    |<!--MTInclude blog_id="455" module="共通ページフッター（2016/09版）"-->
+    |<!--MTInclude blog_id="455" module="共通ページフッター（2016/09版）" hasGuide="true" hasOfficial="true" hasNav="true"--><!-- ★★★全オプション★★★ -->
+    |</MTIgnore>
+else
+
+    //- 表示確認テンプレート用
+    // .l-footer
+    .l-footer
+        .l-inner 
+
+            // #footer
+            .Footer#footer
+
+                // .FooterGuide
+                //- .FooterGuide
+                //-     .FooterGuide__header
+                //-         .FooterGuide__title ヤフオク!のご利用にあたって
+                //-     .FooterGuide__body
+                //-         ul.FooterGuide__items
+                //-             li.FooterGuide__item
+                //-                 a.FooterGuide__link(href="https://auctions.yahoo.co.jp/guide/m/navi/")
+                //-                     |ヤフオク!ご利用ガイド
+                //-             li.FooterGuide__item
+                //-                 a.FooterGuide__link(href="https://auctions.yahoo.co.jp/guide/m/navi/archives/attention.html")
+                //-                     |安全な取引のために
+                //-             li.FooterGuide__item
+                //-                 a.FooterGuide__link(href="https://auctions.yahoo.co.jp/topic/mobile/app/promo/")
+                //-                     |出品はアプリ（無料）を使おう！
+                // /.FooterGuide
+
+
+                // .FooterOfficial
+                .FooterOfficial
+                    dl.FooterOfficial__inner
+                        dt.FooterOfficial__title 公式アカウント
+                        dd.FooterOfficial__description
+                            ul.FooterOfficial__external
+                                li.FooterOfficial__item.FooterOfficial__item--facebook
+                                    a.FooterOfficial__link(href="https://www.facebook.com/YahooAuctionsJp") Facabook
+                                li.FooterOfficial__item.FooterOfficial__item--twitter
+                                    a.FooterOfficial__link(href="https://twitter.com/8209/") Twitter
+                                li.FooterOfficial__item.FooterOfficial__item--youtube
+                                    a.FooterOfficial__link(href="https://www.youtube.com/channel/UCnma6AyvdVZlP6_4XLOQrGA") YouTube
+                // /.FooterOfficial
+
+
+                // .PageTopNav
+                .PageTopNav.js-promotion-pageTopNav
+                    a.PageTopNav__link.js-promotion-pageTopNavBtn(href="#content") ▲このページのトップへ
+                // /.PageTopNav
+
+
+                // .FooterNav
+                .FooterNav.FooterNav--fleamarket
+                    .FooterNav__inner
+                        ul.FooterNav__items
+                            li.FooterNav__item.FooterNav__item--auction
+                                a.FooterNav__link(href="https://auctions.yahoo.co.jp/") トップ
+                            li.FooterNav__item.FooterNav__item--myauction
+                                a.FooterNav__link(href="https://auctions.yahoo.co.jp/user/jp/show/mystatus") マイオク
+                            li.FooterNav__item.FooterNav__item--fleamarket
+                                a.FooterNav__link(href="https://auctions.yahoo.co.jp/sell/jp/show/topsubmit?category=0&amp;select=flea_market") フリマ出品
+                            li.FooterNav__item.FooterNav__item--exhibit
+                                a.FooterNav__link(href="https://auctions.yahoo.co.jp/sell/jp/show/topsubmit") オークション出品
+
+                // /.FooterNav
+
+                // .FooterDeviceNav
+                .FooterDeviceNav
+                    .FooterDeviceNav__items
+                        dt.FooterDeviceNav__title 表示
+                        dd.FooterDeviceNav__item.FooterDeviceNav__item--first
+                            span.FooterDeviceNav__link モバイル
+                        dd.FooterDeviceNav__item
+                            a.FooterDeviceNav__link(href="#",onclick="(function(){ var a='/YJDSET/pc'; var b=''; var x=new XMLHttpRequest();x.open('GET',a,0);x.send(null);document.location.href=b; })();return false;") パソコン
+                // /.FooterDeviceNav
+
+
+
+                // .FooterList
+                .FooterList 
+                    .FooterList__loginArea
+                        p.FooterList__loginName
+                            a.FooterList__loginLink(href="") ***********
+                            |さん
+
+                        |<!--
+                        p.FooterList__loginStatus
+                            em.FooterList__emphasis
+                                a.FooterList__loginLink(href="") ログイン
+
+                        p.FooterList__loginTool IDでもっと便利に
+                            a.FooterList__loginLink(href="") 新規取得
+                        |-->
+
+                    ul.FooterList__items.FooterList__items--main
+                        li.FooterList__item
+                            a.FooterList__link(href="https://auctions.yahoo.co.jp/jp/") ヤフオク!
+                        li.FooterList__item
+                            a.FooterList__link(href="https://www.yahoo.co.jp/") Yahoo! JAPAN
+
+                    ul.FooterList__items.FooterList__items--sub
+                        li.FooterList__item
+                            a.FooterList__link(href="https://privacy.yahoo.co.jp/") プライバシー
+                        li.FooterList__item
+                            a.FooterList__link(href="https://about.yahoo.co.jp/docs/info/terms/") 規約
+                        li.FooterList__item
+                            a.FooterList__link(href="https://auctions.yahoo.co.jp/html/guidelines.html") ガイドライン
+
+                    ul.FooterList__items.FooterList__items--sub
+                        li.FooterList__item
+                            a.FooterList__link(href="https://auctions.yahoo.co.jp/jp/html/tokushoho.html") 特商法の表示
+                        li.FooterList__item
+                            a.FooterList__link(href="https://www.yahoo-help.jp/app/home/p/353/") ヘルプ
+                    p.FooterList__copyright (C)Yahoo Japan
+                // /.FooterList
+
+
+            // /#footer
+        // /.l-inner
+    // /.l-footer

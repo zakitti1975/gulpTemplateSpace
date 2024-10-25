@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+
+.Knowledge {
+    margin: 20px 0;
+    &__inner {
+        margin: 0 auto;
+    }
+    &__header {
+        margin-bottom: 20px;
+    }
+    &__title--normal {
+        background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04.png);
+        background-position: -120px -212px;
+        width: 173px;
+        height: 14px;
+        text-indent: -9999px;
+        margin: 0 auto;
+    }
+    &__items {
+        text-align: center;
+        font-size: 0;
+    }
+    &__item {
+        display: inline-block;
+        margin: 0 9px;
+        &--app .Knowledge__link {
+            background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04.png);
+            background-position: -184px -120px;
+            width: 82px;
+            height: 82px;
+        }
+        &--infographic .Knowledge__link {
+            background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04.png);
+            background-position: 0px -120px;
+            width: 82px;
+            height: 82px;
+        }
+        &--guide .Knowledge__link {
+            background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04.png);
+            background-position: -92px -120px;
+            width: 82px;
+            height: 82px;
+        }
+        &--safesupport .Knowledge__link {
+            background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04.png);
+            background-position: -276px -120px;
+            width: 82px;
+            height: 82px;
+        }
+        &--about .Knowledge__link {
+            background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04.png);
+            background-position: -368px -120px;
+            width: 82px;
+            height: 82px;
+        }
+    }
+    &__link {
+        display: block;
+        text-indent: -9999px;
+        font-size: medium;
+    }
+}
+
+
+.u-marginB0 {
+    margin-bottom: 0 !important;
+}
+
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .Knowledge{
+        &__title--normal {
+            background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04_2x.png);
+            background-size: 552px 357px;
+        }
+        &__link{
+            background-size: 552px 357px;
+        }
+        &__item--about .Knowledge__link {
+            background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04_2x.png);
+        }
+        &__item--safesupport .Knowledge__link {
+            background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04_2x.png);
+        }
+        &__item--guide .Knowledge__link {
+            background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04_2x.png);
+        }
+        &__item--infographic .Knowledge__link {
+            background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04_2x.png);
+        }
+        &__item--app .Knowledge__link {
+            background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04_2x.png);
+        }
+    }
+}
