@@ -1,2 +1,2 @@
-# ️利用方法
-http://cptl.corp.yahoo.co.jp/pages/viewpage.action?pageId=1172089223
+# ️シンボリックリンクを作成するには
+ln -s /Users/kamelife15/node_modules ./node_modules  をコマンドで打つ
