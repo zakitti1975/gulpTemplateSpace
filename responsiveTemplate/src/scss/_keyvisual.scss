@@ -1,15 +1,44 @@
 @charset "UTF-8";
 
-.SampleKeyVisual {
-
-    &__title {
-        @include sample-mixin() // mixinの呼び出し（_mixin.scss）
+.KeyVisual {
+    &__inner{
+        position: relative;
+        //@include textindent-mixin() // mixinの呼び出し（_mixin.scss）
         width: auto;
-        height: 200px;
-        background: url(../img/bg_sample_kv_01.png) no-repeat 50% 0;
-        background-size: 375px auto;
+        height: 450px;
+        background: url(../img/kv_pc.jpg) no-repeat 50% 0;
+        background-size: cover;
         margin-bottom: 10px;
+        /*Tablet*/
+        @media screen and (max-width: 1280px) {
+            height: 350px;
+            background: url(../img/kv_tablet.jpg) no-repeat 50% 0;
+            background-size: cover;
+            margin-bottom: 10px;
+        }
+        /*Smartphone*/
+        @media screen and (max-width: 768px) {
+            height: 200px;
+            background: url(../img/kv_smartphone.jpg) no-repeat 50% 0;
+            background-size: cover;
+            margin-bottom: 10px;
+        }
     }
+    &__titleInner{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-height: 0;
+        text-align:center;
+    }
+    &__mainTitle {
+        font-size: var(--fz20);
+        }
+    &__subTitle {
+
+        font-size: var(--fz14);
+        }
     &__link {
         text-align: center;
     }

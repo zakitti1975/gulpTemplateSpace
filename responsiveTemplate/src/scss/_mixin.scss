@@ -3,7 +3,7 @@
 // よく利用する記述はmixin/function/placeholderとしてここに追加してください。
 
 // mixin よく使うスニペットや、出し分けが必要なスニペットなど
-@mixin sample-mixin () {
+@mixin textindent-mixin () {
     display: block;
     text-indent: -9999px;
     margin: 0 auto;

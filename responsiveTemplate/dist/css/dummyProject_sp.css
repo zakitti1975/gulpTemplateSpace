@@ -2,10 +2,29 @@
 dummyProject_sp.css
 Copyright (C) 2024 XXXXXX Corporation. All Rights Reserved.
 */
+:root {
+  --vw: 1vw;
+  --fz20: -webkit-calc(20 / 16 * 1rem);
+  --fz20: -moz-calc(20 / 16 * 1rem);
+  --fz20: calc(20 / 16 * 1rem);
+}
+
 body {
   font-family: "Noto Sans JP", serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+.size-100 {
+  width: -webkit-calc(var(--vw) * 100);
+  width: -moz-calc(var(--vw) * 100);
+  width: calc(var(--vw) * 100);
+}
+
+.size-50 {
+  width: -webkit-calc(var(--vw) * 50);
+  width: -moz-calc(var(--vw) * 50);
+  width: calc(var(--vw) * 50);
 }
 
 .SampleImages__list {
@@ -20,20 +39,60 @@ body {
   content: ".";
 }
 
-.SampleKeyVisual__title {
-  display: block;
-  text-indent: -9999px;
-  margin: 0 auto;
-  overflow: hidden;
+.KeyVisual__inner {
+  position: relative;
   width: auto;
-  height: 200px;
-  background: url(../img/bg_sample_kv_01.png) no-repeat 50% 0;
-  -moz-background-size: 375px auto;
-       background-size: 375px auto;
+  height: 450px;
+  background: url(../img/kv_pc.jpg) no-repeat 50% 0;
+  -moz-background-size: cover;
+       background-size: cover;
   margin-bottom: 10px;
+  /*Tablet*/
+  /*Smartphone*/
 }
 
-.SampleKeyVisual__link {
+@media screen and (max-width: 1280px) {
+  .KeyVisual__inner {
+    height: 350px;
+    background: url(../img/kv_tablet.jpg) no-repeat 50% 0;
+    -moz-background-size: cover;
+         background-size: cover;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .KeyVisual__inner {
+    height: 200px;
+    background: url(../img/kv_smartphone.jpg) no-repeat 50% 0;
+    -moz-background-size: cover;
+         background-size: cover;
+    margin-bottom: 10px;
+  }
+}
+
+.KeyVisual__titleInner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  min-height: 0;
+  text-align: center;
+}
+
+.KeyVisual__mainTitle {
+  font-size: var(--fz20);
+}
+
+.KeyVisual__subTitle {
+  font-size: var(--fz14);
+}
+
+.KeyVisual__link {
   text-align: center;
 }
 
