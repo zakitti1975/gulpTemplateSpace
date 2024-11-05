@@ -33,16 +33,16 @@
         text-align:center;
     }
     &__mainTitle {
-        font-size: var(--fz20);
+        font-size: var(--fz24);
         }
     &__subTitle {
-
         font-size: var(--fz14);
         }
     &__link {
         text-align: center;
     }
 }
+
 
 .SampleImages {
     &__list {
@@ -54,8 +54,8 @@
         margin: 10px;
         text-indent: -9999px;
 
-        &--sample01 {
-                @include retina-sprite($sprite-bg-sample-01-group);// CSSスプライトの呼び出し（gulp実行すると自動生成される_sprite.scssにmixinが定義されています）
+        //&--sample01 {
+                //@include retina-sprite($sprite-bg-sample-01-group);// CSSスプライトの呼び出し（gulp実行すると自動生成される_sprite.scssにmixinが定義されています）
                 //
                 // ■retinaでない画像の時
                 // 1. @include sprite();のカッコ内に
@@ -67,19 +67,19 @@
                 // 2. @include retina-sprite();のカッコ内に
                 // 3. $sprite-{src/img/sprite/以下の画像のパスをハイフンでつないだもの}-group　を記載します。
                 // ex)「bg_sample_01.png」「bg_sample_01_2x.png」の場合　→ @include retina-sprite($sprite-bg-sample-01-group);
-        }
-        &--sample02 {
-                @include retina-sprite($sprite-bg-sample-02-group); // CSSスプライトの呼び出し（_sprite.scss）
+        //}
+        //&--sample02 {
+                //@include retina-sprite($sprite-bg-sample-02-group); // CSSスプライトの呼び出し（_sprite.scss）
                 //@include rsprite($sprite-bg-sample-02); // retinaでないCSSスプライトの呼び出し
-        }
-        &--sample03 {
-                @include retina-sprite($sprite-bg-sample-03-group); // CSSスプライトの呼び出し（_sprite.scss）
+        //}
+        //&--sample03 {
+                //@include retina-sprite($sprite-bg-sample-03-group); // CSSスプライトの呼び出し（_sprite.scss）
                 //@include rsprite($sprite-bg-sample-02); // retinaでないCSSスプライトの呼び出し
-        }
-        &--sample04 {
-                @include retina-sprite($sprite-bg-sample-04-group); // CSSスプライトの呼び出し（_sprite.scss）
+        //}
+        //&--sample04 {
+                //@include retina-sprite($sprite-bg-sample-04-group); // CSSスプライトの呼び出し（_sprite.scss）
                 //@include rsprite($sprite-bg-sample-02); // retinaでないCSSスプライトの呼び出し
-        }
+        //}
     }
 
 }

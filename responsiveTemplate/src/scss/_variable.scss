@@ -16,13 +16,20 @@ $fz14: calc(14 / 16 * 1rem);
 $fz16: calc(16 / 16 * 1rem);
 $fz18: calc(18 / 16 * 1rem);
 $fz20: calc(20 / 16 * 1rem);
+$fz22: calc(22 / 16 * 1rem);
+$fz24: calc(24 / 16 * 1rem);
+$fz26: calc(26 / 16 * 1rem);
+$fz28: calc(28 / 16 * 1rem);
 $vw: 1vw;
 
 @mixin defaultSetting() {
     --vw: #{$vw};
+    --fz14: #{$fz14};
     --fz20: #{$fz20};
+    --fz22: #{$fz22};
+    --fz24: #{$fz24};
+    --fz28: #{$fz28};
   }
-
 
 :root{
     @include defaultSetting;
@@ -32,6 +39,10 @@ body{
     font-family: "Noto Sans JP", serif;
     font-optical-sizing: auto;
     font-style: normal;
+    text-size-adjust: 100%;
+    /* プロポーショナルメトリクスを有効にする指定 */
+    font-feature-settings: "palt";
+    word-break: break-all;
 }
 
 .size-100{
