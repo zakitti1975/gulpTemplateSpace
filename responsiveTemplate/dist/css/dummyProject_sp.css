@@ -186,6 +186,7 @@ body {
   height: 450px;
   background: url(../img/kv_pc.jpg) no-repeat 50% 0;
   -moz-background-size: cover;
+    -o-background-size: cover;
        background-size: cover;
   margin-bottom: 10px;
   /*Tablet*/
@@ -197,6 +198,7 @@ body {
     height: 350px;
     background: url(../img/kv_tablet.jpg) no-repeat 50% 0;
     -moz-background-size: cover;
+      -o-background-size: cover;
          background-size: cover;
     margin-bottom: 10px;
   }
@@ -207,6 +209,7 @@ body {
     height: 200px;
     background: url(../img/kv_smartphone.jpg) no-repeat 50% 0;
     -moz-background-size: cover;
+      -o-background-size: cover;
          background-size: cover;
     margin-bottom: 10px;
   }
@@ -292,11 +295,13 @@ body {
   .Appinfo__link--iphone {
     background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04_2x.png);
     -moz-background-size: 552px 357px;
+      -o-background-size: 552px 357px;
          background-size: 552px 357px;
   }
   .Appinfo__link--android {
     background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04_2x.png);
     -moz-background-size: 552px 357px;
+      -o-background-size: 552px 357px;
          background-size: 552px 357px;
   }
 }
@@ -381,10 +386,12 @@ body {
   .Knowledge__title--normal {
     background-image: url(https://s.yimg.jp/images/auct/cms/common/sp/img/1.0.0/spr_common_04_2x.png);
     -moz-background-size: 552px 357px;
+      -o-background-size: 552px 357px;
          background-size: 552px 357px;
   }
   .Knowledge__link {
     -moz-background-size: 552px 357px;
+      -o-background-size: 552px 357px;
          background-size: 552px 357px;
   }
   .Knowledge__item--about .Knowledge__link {
