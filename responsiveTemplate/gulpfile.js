@@ -144,12 +144,7 @@ var alertHttpResources = function (str) {
     console.log('=============== HTML（プレビュー用）をビルドしています ===================')
     return gulp
         //.src(filepath.src_pug + 'index.pug')
-        //.src(filepath.src_pug + '*.pug')
-        .src(
-            [
-            filepath.src_pug + '*.pug',!filepath.src_pug + 'module/'+'_*.pug'
-        ]
-        )
+        .src(filepath.src_pug + '*.pug')
         .pipe(plumber())
         .pipe(pug({pretty: '    '}))
         .pipe(htmlhint())
