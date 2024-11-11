@@ -1,71 +1,45 @@
-
-@charset "UTF-8";
-.commonArticle{
-    margin-bottom:20px;
-    &__inner{
-
-
-    }
-    &__header{
-        margin-bottom:20px;
-        @media screen and (max-width: 768px) {
-            margin-bottom:15px;
-        }
-        &--large{
-            font-weight:600;
-            font-size: var(--fz28);
-            @media screen and (max-width: 768px) {
-                font-size: var(--fz24);
-            }
-        }
-        &--medium{
-            font-weight:500;
-            font-size: var(--fz24);
-            @media screen and (max-width: 768px) {
-                font-size: var(--fz20);
-            }
-        }
-
-    }
-    &__text{
-        line-height:2.0;
-        @media screen and (max-width: 768px) {
-            line-height:1.75;
-        }
-
-    }
-
-
-
-}
-
-.articleModule{
+.module{
+    display:flex;
+    gap: 10px;
     width:  calc(var(--vw) * 100);
     background-color:#aaaaaa;
     margin-bottom:20px;
-    display: flex;
-    flex-direction:column;
+    //justify-content: space-between;
+    flex-direction: row-reverse;
+    & .thumbs{
+        max-width:400px;
+        img{width:100%;}
+    }
+    & .article{width:100%;}
+
+}
+
+
+
+.articleModule{
+    $_root: &;
+    display:flex;
+    flex-direction: column;
     justify-content: space-between;
-    @media screen and (min-width: 768px) {
-        &__imgRight{ flex-direction: row-reverse ;}
-        &__imgLeft{ flex-direction: row ;}
+    width:  calc(var(--vw) * 100);
+    margin-bottom:20px;
+    &__mnBody{
+        text-align:left;
+        width:100%;
     }
     &__thumbs{
-        margin-bottom: 1.5rem;
-        text-align:center;
-        & img{        
-            max-width:480px;
-            @media screen and (max-width: 768px) {
-                width:100%; 
-                }
-            }
+    width: 100%;
+    text-align: center;
+    min-height: 0%;
+    & img{width:100%;max-width:800px;}
     }
-    &__body {
-        width:100%;
-        padding: 15px;
-        line-height:2.0;
-        @media screen and (max-width: 768px) {
-            line-height:1.75;
+    @media screen and (min-width: 768px) {
+        &__mnBody{ text-align: left;}
+        &__imgRight,&__imgLeft{
+            gap:10px;
+            #{$_root}__thumbs{max-width:480px;}
         }
+        &__imgRight{ flex-direction: row-reverse;}
+        &__imgLeft{ flex-direction: row;}
     }
 }
