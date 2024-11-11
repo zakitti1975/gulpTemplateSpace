@@ -61,39 +61,6 @@ body {
   content: ".";
 }
 
-.module {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  width: -webkit-calc(var(--vw) * 100);
-  width: -moz-calc(var(--vw) * 100);
-  width: calc(var(--vw) * 100);
-  background-color: #aaaaaa;
-  margin-bottom: 20px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -webkit-flex-direction: row-reverse;
-     -moz-box-orient: horizontal;
-     -moz-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-}
-
-.module .thumbs {
-  max-width: 400px;
-}
-
-.module .thumbs img {
-  width: 100%;
-}
-
-.module .article {
-  width: 100%;
-}
-
 .articleModule {
   display: -webkit-box;
   display: -webkit-flex;

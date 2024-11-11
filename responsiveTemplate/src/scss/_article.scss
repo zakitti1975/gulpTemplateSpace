@@ -1,21 +1,3 @@
-.module{
-    display:flex;
-    gap: 10px;
-    width:  calc(var(--vw) * 100);
-    background-color:#aaaaaa;
-    margin-bottom:20px;
-    //justify-content: space-between;
-    flex-direction: row-reverse;
-    & .thumbs{
-        max-width:400px;
-        img{width:100%;}
-    }
-    & .article{width:100%;}
-
-}
-
-
-
 .articleModule{
     $_root: &;
     display:flex;
